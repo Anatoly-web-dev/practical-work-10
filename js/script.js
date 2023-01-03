@@ -166,7 +166,8 @@ function comparator(a, b) {
 		'голубой', 'синий', 'фиолетовый', 'розовый', 'серый', 'черный', 'белый'];
 	const priority1 = priority.indexOf(a.color);
 	const priority2 = priority.indexOf(b.color);
-	return priority1 < priority2 ? -1 : 1;
+	return priority1 < priority2 ? -1 :
+		priority1 > priority2 ? 1 : 0;
 }
 
 const sortAPI = {
@@ -214,6 +215,7 @@ const sortAPI = {
 		sort(items, comparation);
 		const end = Date.now();
 		sortTime = `${end - start} ms`;
+		count = 0; // сбрасываем счетчик для кнопки перемешать
 	},
 };
 
